@@ -622,7 +622,7 @@ async function doLookup() {
   lookupBtn.disabled = true;
 
   try {
-    const res = await fetch(`https://jisho.org/api/v1/search/words?keyword=${encodeURIComponent(query)}`);
+    const res = await fetch(`https://corsproxy.io/?url=${encodeURIComponent('https://jisho.org/api/v1/search/words?keyword=' + encodeURIComponent(query))}`);
     if (!res.ok) throw new Error('Network error');
     const data = await res.json();
 
